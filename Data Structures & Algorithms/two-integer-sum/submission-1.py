@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        if not nums:
+            return []
+        
+        # for any i 
+        #   check if target - nums[i] in rest of nums
+        #   if true, return the two indices
+        # move on to the nxt
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+        return []
